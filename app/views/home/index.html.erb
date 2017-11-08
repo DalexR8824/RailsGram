@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+
+	
+	<div class="row">
+		<div class="col-4">
+			
+		</div>
+		<div class="col-8">
+			<h1><%= current_user.name %> </h1>
+			<div>
+				<ul class="nav">
+					<li class="margin-right">
+						<p> <strong><%= @images.count %></strong> Publicaciones</p>
+					</li>
+					<li class="margin-right">
+						<p> <strong>300</strong> Seguidores</p>
+					</li>
+					<li class="margin-right">
+						<p> <strong>220</strong> Seguidos</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>		
+	</div>
+
+	<div class="row" id="images">
+		<%= render @images %>
+
+	</div>
+	<%= will_paginate @images %>
+<% else %>
+
+	<h1>RailsGram</h1>
+
+<% end %>
+
+ 
